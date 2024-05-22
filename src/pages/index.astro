@@ -1,0 +1,79 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+
+import Layout from '../layouts/Layout.astro';
+import Link from '../components/Link.astro';
+import Projects from '../components/Projects.astro';
+---
+
+<Layout title="Tyler Nguyen" description="Tyler Nguyen's personal website.">
+	<div class="introduction">
+		<section>
+			<h2>About</h2>
+			<p>I'm Tyler Nguyen (he/him), a high school student in Alpharetta, Georgia attending Innovation Academy with a major it IT. I have interests in web development and design, graphic design, typography, and music. As of now, I plan to major in computer science in college.</p>
+			<p>I was introduced to music and instruments at an early age, learning piano at about six and taking up the violin during middle school. During my sophomore year at Innovation Academy, I decided to start learning guitar, partly because my father also played and also because I had started gaining an interest in music production and recording. As of now, I work with some of my friends in the creative process to help them create music, and I have also recorded some guitar for them.</p>
+			<p>As for my interests in design and web development, it began during the COVID lockdown when I decided to learn HTML and CSS. During this time, I would begin to involve myself more within the concepts of web design and the process of creating websites. This accelerated during my freshman year, and I would take an interest in other related topics like design and more specifically typography.</p>
+		</section>
+		<div>
+			<section>
+				<h2>Where To Find Me</h2>
+				<p><Link link="mailto:tyler.n.innovation@gmail.com">Email</Link></p>
+				<p><Link link="https://github.com/nguyentylern">GitHub</Link></p>
+			</section>
+			<section>
+				<h2>Resume</h2>
+				<p>My resume is not yet finished. It will be added at a later date.</p>
+			</section>
+		</div>
+	</div>
+	<section class="projects">
+		<div class="projects-text">
+			<h2>Projects</h2>
+			<p>Here are some projects I have worked on. Many are related to school (though the skills required were developed by myself), but some are independent of my academics.</p>
+		</div>
+		<div class="projects-list">
+			<Projects></Projects>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.introduction {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--spacer1);
+	}
+	.introduction > div > * + * {
+		margin-top: var(--spacer2);
+	}
+	section > * + * {
+		margin-top: var(--spacer1);
+	}
+	section > p {
+		text-align: justify;
+	}
+	.projects {
+		margin-top: var(--spacer2);
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--spacer1);
+	}
+	.projects-text > * + * {
+		margin-top: var(--spacer1);
+	}
+	.projects-text p {
+		text-align: justify;
+	}
+	.projects-list {
+		grid-column: span 2;
+	}
+	@media (width < 44rem) {
+		.introduction, .projects {
+			display: block;
+		}
+		.introduction > div {
+			margin-top: var(--spacer2);
+		}
+	}
+</style>

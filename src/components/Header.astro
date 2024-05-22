@@ -1,0 +1,32 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+
+interface Props {
+	h1?: boolean;
+}
+
+const { h1 = false } = Astro.props;
+---
+
+<header>
+	{h1 ? 
+		<h1><a href="/">Tyler Nguyen</a></h1>
+		:
+		<h2><a href="/">Tyler Nguyen</a></h2>
+	}
+</header>
+
+<style>
+	header {
+		padding: var(--spacer2) 0;
+	}
+	h1, h2 {
+		font-weight: bold;
+		font-size: 4rem;
+		line-height: 1;
+	}
+	a {
+		color: var(--color-foreground);
+	}
+</style>

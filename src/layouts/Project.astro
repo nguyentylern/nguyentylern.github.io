@@ -1,0 +1,97 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+import '../styles/markdown.css';
+
+import Header from '../components/Header.astro';
+import Properties from '../components/Properties.astro';
+
+const { frontmatter } = Astro.props;
+
+interface Property {
+    key: string;
+    value: string;
+}
+
+const properties: Property[] = [
+	{key: "Category", value: frontmatter.category},
+    {key: "Collaborators", value: frontmatter.collaborators},
+    {key: "Date", value: frontmatter.date.slice(0, 10)},
+    {key: "Description", value: frontmatter.description},
+]
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={frontmatter.description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title}</title>
+	</head>
+	<body>
+		<Header />
+		<main>
+            <div class="meta">
+                <div class="title">
+                    <h1>{frontmatter.title}</h1>
+                </div>
+                <div class="properties">
+                    <Properties pairs={properties}></Properties>
+                </div>
+            </div>
+			<div class="content">
+                <div class="image">
+                    <img src={frontmatter.image.url} alt={frontmatter.image.alt}>
+                </div>
+                <div class="markdown">
+                    <slot />
+                </div>
+            </div>
+		</main>
+	</body>
+</html>
+<style>
+	body {
+		width: min(calc(160ch + var(--spacer1)), calc(100% - calc(var(--spacer1) * 2)));
+		margin: 0 auto;
+	}
+	main {
+		margin: 0 0 var(--spacer2);
+	}
+    .properties {
+        margin-top: var(--spacer2);
+    }
+    .title h1 {
+        font-size: 2.5rem;
+        line-height: 1.25;
+        text-wrap: balance;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacer1);
+        margin-top: var(--spacer2);
+    }
+    .image {
+        grid-column: 2 / -1;
+        grid-row: 1 / 2;
+    }
+    .image img {
+        border: var(--border-dashed);
+    }
+    .markdown {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    @media (width < 44rem) {
+        .content {
+            display: block;
+        }
+        .markdown {
+            margin-top: var(--spacer1);
+        }
+    }
+</style>

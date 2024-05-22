@@ -1,0 +1,115 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+
+import Link from './Link.astro';
+
+interface Props {
+    title: string;
+    category: string;
+    collaborators: string;
+    date: string;
+    description: string;
+    link: any;
+    image: string;
+    alt: string;
+}
+
+const { title, category, collaborators, description, date, link, image, alt } = Astro.props;
+---
+
+<li>
+    <details>
+        <summary>
+            <div class="meta">
+                <p>{title}</p>
+                <p>{category}</p>
+                <p>{collaborators}</p>
+                <p class="date">{date}</p>
+            </div>
+        </summary>
+        <div class="content">
+            <div class="image">
+                <img src={image} alt={alt}>
+            </div>
+            <div class="text">
+                <p class="description">{description}</p>
+                <p><Link link={link}>More Information</Link></p>
+            </div>
+        </div>
+    </details>
+</li>
+
+<style>
+    li {
+        border-top: var(--border-solid);
+    }
+    li:last-child {
+        border-bottom: var(--border-solid);
+    }
+    summary {
+        display: block;
+        list-style: none;
+        cursor: pointer;
+    }
+    summary::-webkit-details-marker {
+        display: none
+    }
+    details:not([open]) summary:hover {
+        font-weight: bold;
+    }
+    details[open] .meta {
+        border-bottom: var(--border-dashed);
+        font-weight: bold;
+    }
+    .meta {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacer1);
+        padding: 0.5em 0;
+    }
+    details:not([open]) .meta p {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .date {
+        font-variant-numeric: tabular-nums;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacer1);
+        padding: var(--spacer1) 0;
+    }
+    .text {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .text > * + * {
+        margin-top: var(--spacer1);
+    }
+    .image {
+        grid-column: 2 / -1;
+        grid-row: 1 / 2;
+        border: var(--border-dashed);
+    }
+    .description {
+        text-align: justify;
+    }
+    @media (width < 44rem) {
+        .content {
+            display: block;
+        }
+        .text {
+            margin-top: var(--spacer1);
+        }
+        .meta {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .meta :nth-child(2), .meta :nth-child(3) {
+            display: none;
+        }
+    }
+</style>

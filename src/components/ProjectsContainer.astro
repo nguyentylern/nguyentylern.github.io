@@ -1,0 +1,37 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+---
+
+<div>
+    <div class="header">
+        <p>Title</p>
+        <p>Category</p>
+        <p>Collaborators</p>
+        <p>Date</p>
+    </div>
+    <ul role="list">
+        <slot />
+    </ul>
+</div>
+
+<style>
+    .header {
+        color: var(--color-middleground);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacer1);
+        padding-bottom: 0.5em;
+    }
+    ul {
+        list-style: none;
+    }
+    @media (width < 44rem) {
+        .header {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .header :nth-child(2), .header :nth-child(3) {
+            display: none;
+        }
+    }
+</style>

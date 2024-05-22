@@ -1,0 +1,44 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+
+interface Property {
+    key: string;
+    value: string;
+}
+
+interface Props {
+    pairs: Property[];
+}
+
+const { pairs } = Astro.props;
+---
+
+<div class="properties">
+    {pairs.map((property) =>
+        <div class="property">
+            <div class="key">
+                <p>{property.key}</p>
+            </div>
+            <div class="value">
+                <p>{property.value}</p>
+            </div>
+        </div>
+    )}
+</div>
+
+<style>
+    .property {
+        border-top: var(--border-solid);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacer1);
+        padding: 0.5em 0;
+    }
+    .property:last-child {
+        border-bottom: 1px solid var(--color-foreground);
+    }
+    .key {
+        font-weight: bold;
+    }
+</style>

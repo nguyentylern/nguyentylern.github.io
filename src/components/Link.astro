@@ -1,0 +1,24 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+
+interface Props {
+    link: string;
+}
+
+const { link } = Astro.props;
+---
+
+<a href={link}>
+    <slot />
+</a>
+
+<style>
+    a {
+        color: var(--color-foreground);
+        text-decoration: underline;
+    }
+    a:hover {
+        text-decoration-style: double;
+    }
+</style>

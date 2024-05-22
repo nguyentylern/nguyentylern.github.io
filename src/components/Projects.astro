@@ -1,0 +1,25 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+
+import ProjectsContainer from './ProjectsContainer.astro';
+import ProjectsItem from './ProjectsItem.astro';
+
+const projects = await Astro.glob('../pages/projects/*.md');
+projects.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)) 
+---
+
+<ProjectsContainer>
+    {projects.map((project) =>
+        <ProjectsItem
+            title={project.frontmatter.title}
+            category={project.frontmatter.category}
+            collaborators={project.frontmatter.collaborators}
+            date={project.frontmatter.date.slice(0, 10)}
+            description={project.frontmatter.description}
+            link={project.url}
+            image={project.frontmatter.image.url}
+            alt={project.frontmatter.image.alt}
+        ></ProjectsItem>
+    )}
+</ProjectsContainer>
