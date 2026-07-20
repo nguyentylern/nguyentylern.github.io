@@ -12,6 +12,6 @@ image:
 
 In my world history class, there was a project pertaining to Japanese history. There were several options for how we could complete the project, and the option that I chose was to create a playlist of songs relating to a particular event. In addition to that, I chose to incorporate my web development and design skills to create a website for the playlist. This website briefly describes the 1605 Keicho earthquake and its following tsunami and then provides the playlist, including the song names, artist names, album covers, and explanations for my choices.
 
-[You can visit the website here.](https://nguyentylern.github.io/keicho/)
+[You can visit the website here](https://nguyentylern.github.io/keicho/).
 
-[You can look at the code here.](https://github.com/nguyentylern/keicho)
+[You can look at the code here](https://github.com/nguyentylern/keicho).

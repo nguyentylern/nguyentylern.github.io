@@ -16,6 +16,6 @@ The purpose of the website was to create a central source of information regardi
 
 Thank you to Yuri Ante and Nico Borjas for their collaboration on this project.
 
-[You can visit the website here.](https://nguyentylern.github.io/Honeypot/)
+[You can visit the website here](https://nguyentylern.github.io/Honeypot/).
 
-[You can look at the code here.](https://github.com/nguyentylern/Honeypot)
+[You can look at the code here](https://github.com/nguyentylern/Honeypot).

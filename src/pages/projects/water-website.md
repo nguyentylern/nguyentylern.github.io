@@ -14,6 +14,6 @@ For a project in my chemistry class, we were tasked to research water scarcity a
 
 Hannah Lu and I wrote the content of the website, while I coded it. The contributions of the other members (not listed) were inconsequential.
 
-[You can visit the website here.](https://nguyentylern.github.io/water-project/)
+[You can visit the website here](https://nguyentylern.github.io/water-project/).
 
-[You can look at the code here.](https://github.com/nguyentylern/water-project)
+[You can look at the code here](https://github.com/nguyentylern/water-project).

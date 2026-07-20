@@ -16,12 +16,12 @@ In addition, I recorded guitar for the song "one, together" (where I was also th
 
 For kazyy:
 
-- [You can find kazyy's Twitter here.](https://twitter.com/lvkash_)
-- [You can find kazyy's instagram here.](https://www.instagram.com/kzyhazy)
-- [And you can find kazyy's Spotify here.](https://open.spotify.com/artist/0oCMKfrXX3OYSXBrMCfPzc)
+- [You can find kazyy's Twitter here](https://twitter.com/lvkash_).
+- [You can find kazyy's instagram here](https://www.instagram.com/kzyhazy).
+- [And you can find kazyy's Spotify here](https://open.spotify.com/artist/0oCMKfrXX3OYSXBrMCfPzc).
 
 For renji9:
 
-- [You can find renji9's Twitter here.](https://twitter.com/renji9to5)
-- [You can find renji9's instagram here.](https://www.instagram.com/renji9to5)
-- [And you can find renji9's Spotify here.](https://open.spotify.com/artist/4V4bJ6agpxYON3JpdYiuWZ)
+- [You can find renji9's Twitter here](https://twitter.com/renji9to5).
+- [You can find renji9's instagram here](https://www.instagram.com/renji9to5).
+- [And you can find renji9's Spotify here](https://open.spotify.com/artist/4V4bJ6agpxYON3JpdYiuWZ).

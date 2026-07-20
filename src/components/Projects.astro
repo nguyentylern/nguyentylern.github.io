@@ -5,8 +5,9 @@ import '../styles/global.css';
 import ProjectsContainer from './ProjectsContainer.astro';
 import ProjectsItem from './ProjectsItem.astro';
 
-const projects = await Astro.glob('../pages/projects/*.md');
-projects.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)) 
+const projectsResults = await import.meta.glob('../pages/projects/*.md', {eager: true});
+const projects = Object.values(projectsResults);
+projects.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date))
 ---
 
 <ProjectsContainer>

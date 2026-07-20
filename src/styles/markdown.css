@@ -30,7 +30,7 @@
     color: var(--clr-text);
     text-decoration: underline;
 }
-.markdown a:hover { text-decoration-style: double; }
+.markdown a:hover { text-decoration-style: dotted; }
 .markdown hr {
     background: none;
     border: 0;
@@ -45,7 +45,7 @@
 .markdown b, .markdown strong { font-weight: bold; }
 .markdown ul, .markdown ol {
     margin: var(--spacer1) 0;
-    padding: 0 0 0 2ch; 
+    padding: 0 0 0 2ch;
 }
 .markdown ul li + li, .markdown ol li + li {
     margin-top: var(--spacer1);

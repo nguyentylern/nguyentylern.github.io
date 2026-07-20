@@ -12,6 +12,6 @@ image:
 
 This is a website describing a computing innovation; the innovation I selected was Napster. I chose it partly because music is a large passion of mine but also because I find peer-to-peer networks to be a very interesting technology. The website was made as a research project for my AP Computer Science Principles class.
 
-[You can visit the website here.](https://nguyentylern.github.io/computing-innovation/)
+[You can visit the website here](https://nguyentylern.github.io/computing-innovation/).
 
-[You can look at the code here.](https://github.com/nguyentylern/computing-innovation)
+[You can look at the code here](https://github.com/nguyentylern/computing-innovation).
