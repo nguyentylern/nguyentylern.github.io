@@ -5,13 +5,12 @@ import '../styles/global.css';
 import ProjectsContainer from './ProjectsContainer.astro';
 import ProjectsItem from './ProjectsItem.astro';
 
-const projectsResults = await import.meta.glob('../pages/projects/*.md', {eager: true});
-const projects = Object.values(projectsResults);
-projects.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date))
+const projects = Object.values(await import.meta.glob('../pages/projects/*.md', {eager: true}));
+projects.sort((a: any, b: any) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date))
 ---
 
 <ProjectsContainer>
-    {projects.map((project) =>
+    {projects.map((project: any) =>
         <ProjectsItem
             title={project.frontmatter.title}
             category={project.frontmatter.category}
